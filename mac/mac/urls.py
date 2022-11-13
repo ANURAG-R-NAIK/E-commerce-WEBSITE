@@ -13,11 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+from django.contrib import admin  #this is our main heard urls.py site
 from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('shop/',include('shop.urls')),
+    path('shop/',include('shop.urls')), #here we add paths for the shop and mac urls . so when a user comes for mac url 
+                                        #he will be directed to the urls of shop and blog and ad the restt operations are followed there
     path('blog/',include('blog.urls'))
 ]
